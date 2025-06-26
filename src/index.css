@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-800 font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium;
+  }
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  .btn-secondary {
+    @apply bg-secondary text-primary-dark hover:bg-secondary-dark;
+  }
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg;
+  }
+  .resource-card {
+    @apply card h-full flex flex-col;
+  }
+  .resource-image {
+    @apply h-48 object-cover w-full bg-gray-100;
+  }
+  .resource-meta {
+    @apply text-sm text-gray-500;
+  }
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.breadcrumb {
+  @apply flex items-center text-sm text-gray-600;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  content: "/";
+  @apply mx-2 text-gray-400;
+}
+
+.breadcrumb-item:last-child {
+  @apply font-medium text-primary;
+}
